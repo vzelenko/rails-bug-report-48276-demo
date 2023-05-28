@@ -1,0 +1,42 @@
+
+<!-- FAILS, default scaffold -->
+<%#= form_with(model: real_estate_payment) do |form| %>
+
+
+<!-- FAILS
+      undefined method `real_estate_deal_real_estate_payments_path' for #<ActionView::Base:0x0000000000d1b0>
+      Did you mean?  real_estate_deal_payments_path
+-->
+<%#= form_with(model: [@deal, real_estate_payment]) do |form| %>
+
+<!-- WORKS, but awkward syntax -->
+<%
+  custom_url = real_estate_payment.persisted? ? real_estate_payment_path(real_estate_payment) : real_estate_deal_payments_path(@deal)
+%>
+<%= form_with(model: real_estate_payment, url: custom_url) do |form| %>
+  <% if real_estate_payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(real_estate_payment.errors.count, "error") %> prohibited this real_estate_payment from being saved:</h2>
+
+      <ul>
+        <% real_estate_payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div style="margin-top: 20px">
+    <%= form.submit %>
+  </div>
+<% end %>

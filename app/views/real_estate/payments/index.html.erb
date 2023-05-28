@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Payments</h1>
+
+<div id="real_estate_payments">
+  <% @real_estate_payments.each do |real_estate_payment| %>
+    <%= render real_estate_payment %>
+    <p>
+      <%= link_to "Show this payment", real_estate_payment %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New payment", new_real_estate_deal_payment_path(@deal) %> |
+<%= link_to "Back to deal", real_estate_deal_path(@deal) %>
+

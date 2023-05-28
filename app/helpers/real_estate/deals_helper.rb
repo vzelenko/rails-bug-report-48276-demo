@@ -1,0 +1,2 @@
+module RealEstate::DealsHelper
+end

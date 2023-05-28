@@ -1,0 +1,10 @@
+<h1>New payment</h1>
+
+<%= render "form", real_estate_payment: @real_estate_payment %>
+
+<br>
+
+<div>
+  <%= link_to "Back to payments", real_estate_deal_payments_path(@deal) %> |
+  <%= link_to "Back to deal", real_estate_deal_path(@deal) %>
+</div>

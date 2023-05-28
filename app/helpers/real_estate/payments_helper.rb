@@ -1,0 +1,2 @@
+module RealEstate::PaymentsHelper
+end

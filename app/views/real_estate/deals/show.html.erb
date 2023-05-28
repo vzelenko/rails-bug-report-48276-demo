@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @real_estate_deal %>
+
+<div>
+  <%= link_to "Edit this deal", edit_real_estate_deal_path(@real_estate_deal) %> |
+  <%= link_to "Add Payments", new_real_estate_deal_payment_path(@real_estate_deal) %> |
+  <%= link_to "Back to deals", real_estate_deals_path %>
+</div>
+<div style="margin-top: 20px">
+  <%= button_to "Destroy this deal", @real_estate_deal, method: :delete %>
+</div>
